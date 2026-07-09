@@ -1,15 +1,14 @@
-package com.uce.edu.pa2.api.as;
+package uce.edu.ec;
 
 import java.time.LocalDate;
-
-import com.uce.edu.pa2.api.as.application.service.EstudianteService;
-
-import com.uce.edu.pa2.api.as.domain.model.Estudiante;
 
 import io.quarkus.runtime.Quarkus;
 import io.quarkus.runtime.QuarkusApplication;
 import io.quarkus.runtime.annotations.QuarkusMain;
 import jakarta.inject.Inject;
+import uce.edu.ec.application.service.AuditoriaService;
+import uce.edu.ec.application.service.EstudianteService;
+import uce.edu.ec.domain.model.Estudiante;
 
 @QuarkusMain
 public class Main {
@@ -21,6 +20,9 @@ public class Main {
     public static class App implements QuarkusApplication {
         @Inject
         private EstudianteService estudianteService;
+
+        @Inject
+        private AuditoriaService auditoriaService;
   
         @Override
         public int run(String... args) throws Exception {
@@ -30,7 +32,12 @@ public class Main {
             e.setApellido("Suquilandi");
             e.setGenero("M");
             e.setFechaNacimiento(LocalDate.now());
+
+
+           
             this.estudianteService.guardar(e);
+            
+            
             
             return 0;
         }

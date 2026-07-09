@@ -1,12 +1,10 @@
-package com.uce.edu.pa2.api.as.application.service;
+package uce.edu.ec.application.service;
 
-
-
-import com.uce.edu.pa2.api.as.domain.model.Auditoria;
-import com.uce.edu.pa2.api.as.domain.repository.AuditoriaRepository;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import uce.edu.ec.domain.model.Auditoria;
+import uce.edu.ec.domain.repository.AuditoriaRepository;
 
 @ApplicationScoped
 public class AuditoriaService {

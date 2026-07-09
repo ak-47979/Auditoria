@@ -1,11 +1,10 @@
-package com.uce.edu.pa2.api.as.application.service;
+package uce.edu.ec.application.service;
 
-
-import com.uce.edu.pa2.api.as.domain.model.Estudiante;
-import com.uce.edu.pa2.api.as.domain.repository.EstudianteRepository;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import uce.edu.ec.domain.model.Estudiante;
+import uce.edu.ec.domain.repository.EstudianteRepository;
 
 //Aqui programamos toda la logica de negocio 
 @ApplicationScoped
@@ -14,22 +13,23 @@ public class EstudianteService {
     @Inject
 
     private EstudianteRepository estudianteRepository;
-    @MedirTiempo
+    @Auditar
+    
     public void guardar(Estudiante estudiante){
         this.estudianteRepository.crear(estudiante);
 
     }
-    @MedirTiempo
+    @Auditar
     public void eliminar(Integer id){
         this.estudianteRepository.eliminar(id);;
 
     }
-    @MedirTiempo
+    @Auditar
     public Estudiante buscarPorId(Integer id){
         return this.estudianteRepository.seleccionarPorId(id);
 
     }
-    @MedirTiempo
+    @Auditar
     public void actualizar(Estudiante estudiante){
         this.estudianteRepository.actualizar(estudiante);
 

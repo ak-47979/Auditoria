@@ -1,14 +1,15 @@
-package com.uce.edu.pa2.api.as.infraestructure.repository;
+package uce.edu.ec.infraestructure.repository;
 
 
 
-import com.uce.edu.pa2.api.as.domain.model.Auditoria;
-import com.uce.edu.pa2.api.as.domain.repository.AuditoriaRepository;
+
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
+import uce.edu.ec.domain.model.Auditoria;
+import uce.edu.ec.domain.repository.AuditoriaRepository;
 
 @ApplicationScoped
 @Transactional

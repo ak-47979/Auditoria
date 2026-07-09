@@ -1,5 +1,4 @@
-package com.uce.edu.pa2.api.as.domain.model;
-
+package uce.edu.ec.domain.model;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;

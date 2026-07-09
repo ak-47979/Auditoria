@@ -1,24 +1,24 @@
-package com.uce.edu.pa2.api.as.application.service;
+package uce.edu.ec.application.service;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-
-import com.uce.edu.pa2.api.as.domain.model.Auditoria;
-
 import jakarta.annotation.Priority;
+import jakarta.inject.Inject;
 import jakarta.interceptor.AroundInvoke;
 import jakarta.interceptor.Interceptor;
 import jakarta.interceptor.InvocationContext;
+import uce.edu.ec.domain.model.Auditoria;
 
 @Interceptor
-@MedirTiempo
+@Auditar
 @Priority(Interceptor.Priority.APPLICATION)
 public class MedirTiempoInterceptor {
-
+@Inject
+private AuditoriaService auditoriaService;
 
 @AroundInvoke
-public Object medirTiempoYAuditar(InvocationContext context) throws Exception {
+public Object Auditar(InvocationContext context) throws Exception {
 
     long inicio = System.currentTimeMillis();
 
@@ -35,7 +35,7 @@ public Object medirTiempoYAuditar(InvocationContext context) throws Exception {
 
         long tiempo = fin - inicio;
 
-        // Mensaje en consola
+     
         System.out.println("========== AUDITORÍA ==========");
         System.out.println("Método: " + nombreMetodo);
         System.out.println("Argumentos: " + argumentos.toString());
@@ -48,7 +48,7 @@ public Object medirTiempoYAuditar(InvocationContext context) throws Exception {
         auditoria.setFechaHoraEjecucion(LocalDateTime.now());
         auditoria.setTiempoEjecucionMs(tiempo);
 
-        //auditoriaService.guardar(auditoria);
+        auditoriaService.guardar(auditoria);
     }
 }
 }

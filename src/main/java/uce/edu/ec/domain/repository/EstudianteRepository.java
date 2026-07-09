@@ -1,6 +1,8 @@
-package com.uce.edu.pa2.api.as.domain.repository;
+package uce.edu.ec.domain.repository;
 
-import com.uce.edu.pa2.api.as.domain.model.Estudiante;
+import uce.edu.ec.domain.model.Estudiante;
+
+
 
 //Se crea una por cada entidad, es decir, una por cada clase que representa una tabla en la base de datos
 public interface EstudianteRepository {

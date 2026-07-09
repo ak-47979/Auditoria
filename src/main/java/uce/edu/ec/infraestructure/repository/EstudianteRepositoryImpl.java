@@ -1,14 +1,12 @@
-package com.uce.edu.pa2.api.as.infraestructure.repository;
+package uce.edu.ec.infraestructure.repository;
 
-
-import com.uce.edu.pa2.api.as.domain.model.Estudiante;
-import com.uce.edu.pa2.api.as.domain.repository.EstudianteRepository;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
-
 import jakarta.transaction.Transactional;
+import uce.edu.ec.domain.model.Estudiante;
+import uce.edu.ec.domain.repository.EstudianteRepository;
 
 @ApplicationScoped
 @Transactional
