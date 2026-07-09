@@ -15,6 +15,7 @@ public class EstudianteService {
 
     private EstudianteRepository estudianteRepository;
     @MedirTiempo
+    @Archivo
     public void guardar(Estudiante estudiante){
         this.estudianteRepository.crear(estudiante);
 

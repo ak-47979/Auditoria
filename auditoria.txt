@@ -1,0 +1,5 @@
+Fecha y hora: 2026-07-08 22:53:57
+Método: EstudianteService.guardar
+Argumentos: [Estudiante [id=6, nombre=Andy, apellido=Suquilandi, fechaNacimiento=2026-07-08, genero=M]]
+Tiempo de ejecución: 74 ms
+----------------------------------------------------

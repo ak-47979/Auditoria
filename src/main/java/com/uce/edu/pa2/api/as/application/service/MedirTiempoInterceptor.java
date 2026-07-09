@@ -7,6 +7,7 @@ import java.util.Arrays;
 import com.uce.edu.pa2.api.as.domain.model.Auditoria;
 
 import jakarta.annotation.Priority;
+import jakarta.inject.Inject;
 import jakarta.interceptor.AroundInvoke;
 import jakarta.interceptor.Interceptor;
 import jakarta.interceptor.InvocationContext;
@@ -15,7 +16,8 @@ import jakarta.interceptor.InvocationContext;
 @MedirTiempo
 @Priority(Interceptor.Priority.APPLICATION)
 public class MedirTiempoInterceptor {
-
+@Inject
+private AuditoriaService auditoriaService;
 
 @AroundInvoke
 public Object medirTiempoYAuditar(InvocationContext context) throws Exception {
@@ -48,7 +50,7 @@ public Object medirTiempoYAuditar(InvocationContext context) throws Exception {
         auditoria.setFechaHoraEjecucion(LocalDateTime.now());
         auditoria.setTiempoEjecucionMs(tiempo);
 
-        //auditoriaService.guardar(auditoria);
+        auditoriaService.guardar(auditoria);
     }
 }
 }
